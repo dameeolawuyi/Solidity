@@ -1,0 +1,26 @@
+ //pragma solidity >=0.4.22 <0.9.0;
+
+ pragma solidity 0.8.10;
+
+contract WeiWallet{
+    address public owner;
+    constructor() {
+        owner= msg.sender;
+    }
+    function recieve() external payable{
+        emit WithoutData(msg.value);
+    }
+        
+    function sendEther() external payable(uint) {
+        require(amount<= address(this). balance "sorry, insufficient balance"),
+        recieve.transfer(_amount);
+    }
+
+contract Mapping{
+
+    mapping(address=>uint) external userMap;
+    function getBalance() external view returns (uint)
+    balances{msg.userMap} =120;
+}
+    
+}
