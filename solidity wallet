@@ -7,16 +7,22 @@ contract WeiWallet{
     constructor() {
         owner= msg.sender;
     }
+    
+    //to recieve ether
+    
     function recieve() external payable{
         emit WithoutData(msg.value);
     }
+    //to send ether
         
-    function sendEther() external payable(uint) {
+    function sendEther(address) external payable(uint) {
         require(amount<= address(this). balance "sorry, insufficient balance"),
         recieve.transfer(_amount);
     }
+    
+   //to store balances
 
-contract Mapping{
+    Mapping{
 
     mapping(address=>uint) external userMap;
     function getBalance() external view returns (uint)
