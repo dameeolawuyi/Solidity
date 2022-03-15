@@ -54,7 +54,8 @@ contract OLUWADAMILOLA OLAWUYI TOKEN is IERC20{
  }
  function deposit(address _to, uint _amount, uint tokenAmount) public override returns(uint){
          require (balance Of[msg.sender] >= _tokenAmount, "you dont have enough balance");
-         balance Of[msg.sender ] -= amount;
+         balance Of[msg.sender ] -= _amount;
+         tokenAmount(_amount < totalSupply, "you can't have that much. sorry";
          deposited[msg.sender] += tokenAmount;
          emit tokenAdded(.this, _address, _amount);
      }
