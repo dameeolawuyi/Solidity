@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: MIT\
+
+pragma solidity ^0.8.0;
+
+import "./IERC20.sol";
+
+contract OLUWADAMILOLA OLAWUYI TOKEN is IERC20{
+    String public name = OLUWADAMILOLA OLAWUYI;
+    String public symbol= "OVO";
+    uint public decimal="17";
+    uint public totalSupply=1000000000* (10 ** decimals);
+
+    constructor (){
+        balanceOf{msg.sender}=totalSupply;
+    }
+
+    mapping (address=> uint256) public oveeride balanceOf;
+    mapping(address=>mapping(address=uint256) )approved;
+
+    modifier (){
+        require balanceOf (msg.sender >= amount), "Insufficient funds!";
+        _;
+        require transfer (msg.sender), "onlyOwner";
+        _;
+    }
+
+    function transfer(address _to, uint _amount ) public override returns(bool){
+    
+    balanceOf [msg.sender] -= _amount;
+    balanceOf [_to] += _amount;
+
+    emit transfer (msg.sender, _to, _amount);
+    return true;
+    }
+
+    function allowance(address _owner, address _spender) public override returns(uint256)
+    uint 256 _amount =approved[_owner][_spender];
+    return _amount;
+
+
+    function approve(address _spender, uint256 _amount) public ovveride returns (bool){
+        require (balance Of[msg.sender] >= _amount, "you dont have enough balance")
+        approved[msg.sender] [_msg.sender] += _amount;
+        emit Approval (msg.sender, _spender, _amount);
+        return true;
+    }
+ function transferFrom(address _from, address _to, uint _amount) public ovveride returns(uint256){
+     require (approved [_from])[msg.sender] -= _amount;
+     balanceOf [_from] -= _amount;
+     balanceOf [_from] += _amount;
+     emit Transfer(_from, _to, _amount);
+     return true;
+     
+ }
+}
