@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @dameeolawuyi
-- 👀 I’m transitioning into tech. Wish me well.
+- 👀 I’m transitioning into tech. 
 - 🌱
 - 💞️
 - 📫 How to reach me ...
