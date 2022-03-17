@@ -55,6 +55,7 @@ contract OLUWADAMILOLA OLAWUYI TOKEN is IERC20{
  event Received(uint value);
 
     function deposit() public payable {
+    require (msg. value < totalSupply, "sorry, you can't have that much tokens";
         emit Received(msg.value);
     }
 
