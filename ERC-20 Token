@@ -22,6 +22,7 @@ contract OLUWADAMILOLA OLAWUYI TOKEN is IERC20{
         _;
         require transfer (msg.sender), "onlyOwner";
         _;
+        require amount(msg.value > totalSupply), "you cant have that much token";
     }
 
     function transfer(address _to, uint _amount ) public override returns(bool){
