@@ -1,0 +1,12 @@
+
+{
+"name" : DAMIYO,
+"image" : https://ipfs.io/ipfs/QmRQd8Ypj3Fac5jtiPnxfdBmtcadPKfwPyXt8Z2skW1jEv,
+"description": "An image of a woman in her early twenties"
+};
+// my-screenshot.json
+{
+"name" : "Feminine",
+"image" : "https://ipfs.io/ipfs/QmSvzZtYxRVJQFoSeJFn5Uh57iM6yDeAp8RbY6D4BBE5Xq",
+"description": "my screenshot of etherscan"
+};
