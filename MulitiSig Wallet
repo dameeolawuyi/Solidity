@@ -1,0 +1,102 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.7.0 <0.9.0;
+
+
+
+
+contract MultiSigWallet{
+    event Submit(address owner,  address to, uint value, uint txId);
+    event Comfirm(address owner, uint txId );
+    event Approved(address owner, address to, uint value);
+    event Execute(address owners, uint txId);
+
+    address[] public owners;
+    mapping(address=> bool) public transaction;
+    uint public comfirmationRequired;
+
+ struct Transaction{
+     address  owners;
+     uint   value;
+     uint required;
+     uint comfirmation;
+     bool executed;
+     }
+
+     mapping(address => bool) public owner;
+     mapping (uint => bool) transactionExists;
+     mapping (uint => (mapping => bool)) public isApproved;
+
+     transaction[] public transactions;
+
+     modifier transactionExists(uint txId) {
+         require (transactionExists, "transaction doesn't exist");
+        _;
+     } 
+     
+     modifier isOwner(address owner){
+         require (msg.sender== isOwner, "only owners can call");
+         _;
+     }
+    
+    modifier isNotApproved(address owner, uint txId){
+        require (!Approved [txId][msg.sender], "transaction already approved")
+        _;
+    }
+
+
+    modifier isNotExecuted(address owner, uint txId){
+    require(!Executed[txId][msg.sender], "transaction already executed" )
+    _;
+
+    }
+
+    constructor(address[] memory _owner, uint _required) public {
+       require (addresses.length > 3, "sorry, array of address is short");
+       require (_required = _addresses.length -1, "length of addresses is not up to required");
+    }
+
+    function submit(address _owner, uint _txnId) public {
+        require (address (this). >= uint value, "insufficient balance");
+        require (msg.sender == isOwner, "only owner can call"); 
+        transactionCount ++;
+        transactions. [transactionCount] = Transaction( _to _amount 0, false)
+        transactionExists[transactionCount] =true;
+        emit submit (msg.sender, transactionnCount);
+
+    }
+
+    function comfirm (address _owner, uint _txId) external c{
+        require (txId exists , "transaction is invalid!");
+    }
+
+    function approved(address _owner, uint _txId ) external onlyOwner transactionExists(txId) isNotApproved(txId) isNotExecuted(txId) {
+        require (transactionExists, "transaction doesn't exist");
+         require (!transaction.approved, "transaction already approved");
+         require (!transaction.executed, "transaction already executed");
+         approved[txId][msg.sender] = true;
+         transaction storage transaction = txId;
+         transaction.comfiramtions ++;
+         emit Approval (txId, msg.sender);
+
+    }
+
+    function execute(address _owner, uint _txId) external {
+         require (!transaction .executed, "transaction already executed");
+         require (transaction.comfirmations >= required, "not enough comfirmation obtained");
+         transaction.executed =true;
+         transaction.transfer. RecieverAddress {value: amount.transaction}("")  = (bool success);
+         require (success, "transaction is not successfull");
+         emit sent (transaction. recieverAddress, transaction.amount);
+    }
+
+    function getBalance(address (this)., address _owner) external returns (uint){
+            require (msg.sender == _isOwner), "only owners can call");
+            return  balance = address (this).balance;
+            
+
+        
+    }
+
+ 
+}
