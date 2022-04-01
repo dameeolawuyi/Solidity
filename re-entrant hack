@@ -1,0 +1,30 @@
+//SPDX-License-Identifier:MIT
+pragma solidity 0.8.0;
+//constructor
+//mapping
+//modifier
+//events
+//deposit ether
+//send ether
+//recieve ether
+
+
+contract LowBudgetBinanceStore{
+    uint value;
+    address owner;
+
+    constructor(){
+        owner = msg.sender;
+    }
+
+    mapping (address => uint) public transaction;
+    event Deposited(uint value);
+    
+    function deposit( address, uint) public {
+    emit Deposited (value);
+
+
+
+    }
+
+}
